@@ -50,11 +50,25 @@ Para ejecutar el script es necesario instalar Python en el servidor, en caso de 
           
 Se ejecuta el script de la siguiente manera:
 
-          python (ruta absoluta del archivo harverster.py)
+          python "ruta absoluta del archivo harvester.py" "Dirección IP del servidor" "Nombre de la base de datos de CouchDB"
 
-<h2> Filtrado de datos </h2>
+Se debe tener en cuenta que las coordenadas se pueden modificar para recolectar tweets de diferentes lugares.
 
+La mejor práctica sería ejecutar el script en varios computadores con diferentes ubicaciones y una vez que se recolectan los tweets se procede a replicar los tweets en una sola base de datos.
 
+<h2> Replicación de datos</h2>
+
+Para replicar los datos en CouchDB es necesario realizar los siguientes pasos: 
+  - Configurar el servidor para recibir o enviar los datos.
+      - Dirigirse a "Configuración" en el menú de herramientas.
+      - Modificar bind_address en httpd de 127.0.0.1 a 0.0.0.0
+  - Iniciar la replicación.
+      - Dirigirse a replicación y llenar la información que se solicita.
+        En caso de extraer los datos, seleccionar la opción de base de datos remota, llenar el campo con la dirección IP del servidor remoto separado con un "/" y el nombre de la base de datos. En el siguiente campo seleccionar la base de datos local en la que se almacenarán los datos, junto con su nombre.
+        
+<h2> Limpieza de datos </h2>
+Los tweets que se recolectaron contienen información que no sirve para el análisis deseado, por lo que se, procede a la limpieza de estos, escogiendo solamente el texto de los tweets y descartando el resto de información.
+Para ello, es necesario 
 
             
 
