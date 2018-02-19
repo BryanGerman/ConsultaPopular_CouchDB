@@ -48,6 +48,18 @@ Para ejecutar el script es necesario instalar Python en el servidor, en caso de 
 
           python
           
+Se debe instalar la librería que permitirá realizar las solicitudes a Twitter, por lo que, es necesario instalar la herramienta pip de python con el siguiente comando:
+
+          sudo apt-get install pip-python
+          
+Y a continuación, se instala la librería utilizando la herramienta pip.
+
+          pip install tweepy
+          
+También se instala la librería para vincular Python con CouchDB.
+
+          pip install couchdb
+          
 Se ejecuta el script de la siguiente manera:
 
           python "ruta absoluta del archivo harvester.py" "Dirección IP del servidor" "Nombre de la base de datos de CouchDB"
@@ -66,9 +78,42 @@ Para replicar los datos en CouchDB es necesario realizar los siguientes pasos:
       - Dirigirse a replicación y llenar la información que se solicita.
         En caso de extraer los datos, seleccionar la opción de base de datos remota, llenar el campo con la dirección IP del servidor remoto separado con un "/" y el nombre de la base de datos. En el siguiente campo seleccionar la base de datos local en la que se almacenarán los datos, junto con su nombre.
         
-<h2> Limpieza de datos </h2>
-Los tweets que se recolectaron contienen información que no sirve para el análisis deseado, por lo que se, procede a la limpieza de estos, escogiendo solamente el texto de los tweets y descartando el resto de información.
-Para ello, es necesario 
+<h2> Filtrado de datos </h2>     
+
+Para obtener datos de acuerdo a nuestro objetivo, es posible filtrarlos a través de vistas. Para realizar una vista, es necesario dirigirse a la base de datos con los tweets recolectados y en vistas seleccionar "Vista temporal".
+Se desplegará una caja de texto donde se especificarán los datos que serán filtrados a través de un código ejecutado con el lenguaje JavaScript.
+En este caso se realizó el filtrado con el siguiente código:
+    function(doc){
+      if(doc.lang=="es"){
+        emit(doc.id, doc.text);
+      }
+    }
+    
+Se filtran los datos de tal  forma que solamente se puede visualizar el id del tweets y su contenido.
+
+<h2> Procesamiento de texto </h2>
+Los tweets que se recolectaron contienen información que no sirve para el análisis deseado, por lo que se, procede a la limpieza de estos, escogiendo solamente el texto alfanumérico y descartando todo tipo de caracter especial.
+Para ello, es necesario ejecutar el script limpieza.py (carpeta Limpieza Tweets).
+
+          python limpieza.py
+          
+Lo que generará un archivo de salida en formato .json.
+
+
+
+<h2> CouchDB y ElasticSearch </h2>
+
+Para clasificar los tweets referentes a la consulta popular, se utilizará la herramienta ElasticSearch que es la encargada de buscar coincidencias en el texto de cada tweet. 
+Para instalar ElasticSearch:
+
+  - 
+
+
+
+
+          python limpieza.py
+          
+
 
             
 
