@@ -1,0 +1,7 @@
+
+/*
+En la fase de pre-procesamiento de datos se filtrara los tweets mediante una vista.
+En este filtro se compara los tweets de tal manera que se almacenen solo los referentes
+a Ecuador y desechar los que provengan de otros lugares. El codigo fue escrito en Javascript
+Como resultado final se tendra el id y el texto de cada tweet
+*/
