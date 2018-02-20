@@ -97,23 +97,24 @@ Para ello, es necesario ejecutar el script limpieza.py (carpeta Limpieza Tweets)
 
           python limpieza.py
           
-Lo que generará un archivo de salida en formato .json.
+Lo que generará un archivo de salida en formato .json. -> salida.json
 
+<h2> Filtrado de datos </h2>
+El archivo obtenido anteriormente contiene solamente el texto de los tweets de la base de datos. Sin embargo, algunos tweets no corresponden a la consulta popular, por lo que, es necesario filtrar aquellos que contengan información sobre el evento. Con ayuda de un script (scriptFiltrado, carpeta Filtrado) generado en shell y de las funciones cat y grep, se filtran aquellos que contengan frases o palabras claves referentes al evento. Para ejecutar el script, se utiliza el siguiente comando:
 
-
-<h2> CouchDB y ElasticSearch </h2>
-
-Para clasificar los tweets referentes a la consulta popular, se utilizará la herramienta ElasticSearch que es la encargada de buscar coincidencias en el texto de cada tweet. 
-Para instalar ElasticSearch:
-
-  - 
-
-
-
-
-          python limpieza.py
+          sh ../scriptFiltrado.sh
           
+La ejecución de este script generará un archivo tipo json -> resultadoFinal.json
+
+<h2> Análisis de datos </h2>
+
+Del último archivo generado, se analizarán los datos de tal forma que, se pueda clasificar aquellos que pertenezcan a la clase SI y aquellos que pertenezcan a la clase NO. Con ayuda del script realizado en Python (Clasificador.py, carpeta Clasificador) se pueden agrupar las coincidencias en cada tweet filtrado y al final presenta los resultados, que son aquellos que predecirán el resultado de la consulta popular. Para ejecutar el script, es necesario instalar la librería sklearn, con el siguiente comando:
+
+          pip install sklearn
+          
+A continuación, bastará con ejecutar el script resultados.py (carpeta Resultados), e interpretar el resultado que se presenta al final de la ejecución del mismo.
+
+          py resultados.py
 
 
-            
 
