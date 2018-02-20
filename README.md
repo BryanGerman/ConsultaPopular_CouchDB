@@ -99,7 +99,7 @@ Para ello, es necesario ejecutar el script limpieza.py (carpeta Limpieza Tweets)
           
 Lo que generará un archivo de salida en formato .json. -> salida.json
 
-<h2> Filtrado de datos </h2>
+<h2> Selección de datos </h2>
 El archivo obtenido anteriormente contiene solamente el texto de los tweets de la base de datos. Sin embargo, algunos tweets no corresponden a la consulta popular, por lo que, es necesario filtrar aquellos que contengan información sobre el evento. Con ayuda de un script (scriptFiltrado, carpeta Filtrado) generado en shell y de las funciones cat y grep, se filtran aquellos que contengan frases o palabras claves referentes al evento. Para ejecutar el script, se utiliza el siguiente comando:
 
           sh ../scriptFiltrado.sh
