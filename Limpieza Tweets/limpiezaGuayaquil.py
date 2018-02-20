@@ -47,4 +47,5 @@ for x in d['rows']:
 	numero = numero + 1
 	b = str(a)
 	#print ('{"id":"'+str(numero)+'","text":"'+b+'"},\n')
-	fa.write('{"id":"'+str(numero)+'","text":"'+b+'"},\n')
+	#fa.write('{"id":"'+str(numero)+'","text":"'+b+'"},\n')
+	fa.write(b+'\n')
