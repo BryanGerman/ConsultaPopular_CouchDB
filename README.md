@@ -1,4 +1,7 @@
 <h1> Proyecto final de Inteligencia de Negocios</h1>
+<h2> Integrantes: </h2>
+<h3> Lema Bryan</h3>
+<h3> Malán Silvana</h3>
 El presente trabajo tiene como finalidad, la predicción de los resultados de la consulta popular realizada el domingo 4 de febrero del 2018 en Ecuador. A través del análisis de tweets recolectados durante toda la campaña de este evento. 
 
 Para la recolección de los tweets fue necesaria la herramienta CouchDB.
