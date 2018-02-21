@@ -47,7 +47,7 @@ Una vez que se presenta la página principal de CouchDB, se debe crear una nueva
 
 Para la recolección de tweets, es necesario utilizar el script harvester.py (carpeta recolección), que es el encargado de vincularse con el API de Twitter y almacenar los tweets recolectados en la base de datos en CouchDB.
 
-Para ejecutar el script es necesario instalar Python en el servidor, en caso de tener instalada la herramienta, se procede a verificar la versión de esta con el siguiente comando:
+Para ejecutar el script es necesario instalar Python en el servidor, en caso de tener instalada la herramienta, se procede a verificar la versión con el siguiente comando:
 
           python
           
@@ -59,7 +59,7 @@ Y a continuación, se instala la librería utilizando la herramienta pip.
 
           pip install tweepy
           
-También se instala la librería para vincular Python con CouchDB.
+Se instala la librería para vincular Python con CouchDB.
 
           pip install couchdb
           
