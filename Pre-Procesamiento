@@ -5,7 +5,27 @@ En este filtro se compara los tweets de tal manera que se almacenen solo los ref
 al idioma Español y desechar los que esten en otro idioma. El codigo fue escrito en Javascript
 Como resultado final se tendra el id y el texto de cada tweet.
 */
-function(doc){ 
-  if(doc.lang=="es"){ 
-  emit(doc.id, doc.text); } 
-  }
+
+<h2> Vista para filtrar tweets de la ciudad: Cuenca <h2>
+  
+  function(doc) {
+	if((doc.user.location == "Cuenca" || doc.user.location == "Cuena-Ecuador")&& doc.lang == "es"){
+		  emit(doc._id, doc.text);
+	}
+
+}
+<h2> Vista para filtrar tweets de la ciudad: Guayaquil <h2>
+function(doc) {
+	if((doc.user.location == "Guayaquil" || doc.user.location == "Guayaquil-Ecuador")&& doc.lang == "es"){
+		emit(doc._id, doc.text);
+	}
+}
+
+<h2> Vista para filtrar tweets de la ciudad: Quito <h2>
+
+function(doc) {
+	if((doc.user.location == "Quito" || doc.user.location == "Quito-Ecuador")&& doc.lang == "es"){
+	  emit(doc._id, doc.text);
+	}
+
+}
